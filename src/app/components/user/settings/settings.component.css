@@ -1,0 +1,46 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+main {
+    background: #FAFAD2!important;
+    
+  
+  }
+  
+  
+  section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-image: url(/assets/photo/Settings.webp) !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  }
+  
+  
+  button {
+  background-color: #0AD5C1;
+  color: white;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 30px;
+  padding: 1.5rem 0.5rem;
+  border-radius: 9px;
+  line-height: 45px;
+  }
+  
+  main i {
+  font-size: 4rem;
+  }

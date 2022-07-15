@@ -1,0 +1,66 @@
+<main>
+    <section class="pt-4">
+
+
+        <div class=" d-flex flex-wrap justify-content-between py-3 py-md-5">
+
+
+            <div class="col-12 col-md-6 text-center">
+                <a  target="blank" [href]="MovieDetail.homepage"> 
+                     <img  [defaultImage]="ImgSrc+MovieDetail.poster_path" [lazyLoad]="ImgSrc+MovieDetail.poster_path" width="200" height="200" class="col-10 col-sm-8  mb-3 mx-auto" [alt]="MovieDetail.title"> </a>
+            </div>
+
+
+            <div class="col-12 col-md-6 ">
+
+                <h2 class=" text-center fw-bold"
+                 *ngIf="MovieDetail.title != null || MovieDetail.title != undefined"
+                 >{{MovieDetail.title}} <span class="vote ms-2 text-white">
+                    {{MovieDetail.vote_average}}</span></h2>
+
+                    <p class="my-1 py-2 px-1 d-flex  " *ngIf="MovieDetail.homepage != null || MovieDetail.homepage!= undefined">
+                    <span class="fw-bold col-3 col-lg-2"> {{"HomePage" | translate}} :</span>  <a target="blank" [href]="MovieDetail.homepage" class="Homeurl"> {{"WebSite" | translate}} </a>
+                    </p>
+
+                    <p class="my-1 py-2 px-1 d-flex " *ngIf="production_companies != null || production_companies != undefined">
+                    <span class="fw-bold col-3 col-lg-2">{{"ProductionCompany" | translate}} :</span>
+                        {{production_companies}} </p>
+
+              
+                            <p class="my-1 py-2 px-1 d-flex " *ngIf="MovieDetail.release_date != null || MovieDetail.release_date != undefined">
+                                <span class="fw-bold col-3 col-lg-2">{{"ReleaseDate" | translate}} :</span>
+                                {{MovieDetail.release_date   }} </p>
+
+                            <p class="py-2 px-1 d-flex  flex-wrap  my-1" *ngIf="MovieDetail.genres != null || MovieDetail.genres != undefined"    > 
+                                <span class="fw-bold col-3 col-lg-2">{{"Genres" | translate }} : </span> 
+                                <span class="col-3" *ngFor="let genres of MovieDetail.genres , let i = index  ">
+                                    {{MovieDetail?.genres[i]?.name}} <span class="shadowX mx-1"> . </span>  </span>
+                            </p>
+
+                            <p class="my-1 py-2 px-1 d-flex flex-wrap" *ngIf="MovieDetail.spoken_languages != null || MovieDetail.spoken_languages != undefined  ">
+                                <span class="fw-bold col-3 col-lg-2">{{"Langu" | translate }} :
+
+                            </span>  
+                            
+                                <span class="col-3 " *ngFor="let languages of MovieDetail.spoken_languages , let i = index ">{{MovieDetail.spoken_languages[i]?.name}} <span class="shadowX mx-1"> . </span> </span>
+                            </p>
+
+                            <p class="my-1 py-2 px-1 d-flex " *ngIf="MovieDetail.budget != null || MovieDetail.budget != undefined  ">
+                                <span class="fw-bold col-3 col-lg-2">{{"Budget" | translate }} :</span> 
+                                <span class="">{{MovieDetail.budget}}</span>
+                            </p>
+
+                            <p class=" py-2 px-1 d-flex flex-wrap story" *ngIf="MovieDetail.overview != null || MovieDetail.overview != undefined  ">
+                                 <span class="fw-bold col-12 col-lg-2">{{"TheStory" | translate }} :</span>  {{MovieDetail.overview}} </p>
+
+
+
+            </div>
+
+
+        </div>
+    
+    
+    </section>
+
+</main>

@@ -1,0 +1,157 @@
+<main class="direction   pt-5 ">
+
+    <section class="pt-lg-4 px-2">
+
+        <div class="d-flex align-items-center flex-wrap px-2">
+
+            <!-- ******************* اختيار نوع العملية ******************************** -->
+            <div class="col-12 col-sm-6 col-md-3 p-2">
+                <select [(ngModel)]="pageData.action" class=" form-select text-center" name="">
+                    <option value="0" selected disabled class="text-center">-- {{"ChooseAction" | translate}} --
+                    </option>
+                    <option value="1"> {{"Transformation" | translate}} </option>
+                    <option value="2"> {{"purchases" | translate}} </option>
+                    <option value="3">{{"bounce" | translate}}</option>
+                </select>
+            </div>
+            <!-- *************************************************** -->
+
+            <!-- ****************  اختيار اسم العميل *********************************** -->
+            <div class="col-12 col-sm-6 col-md-3 p-2">
+                <select [(ngModel)]="pageData.client" class="form-select text-center">
+                    <option value="0" selected disabled class="text-center"> -- {{"clientName" | translate}} --
+                    </option>
+                    <option value="1">{{"AhmedAdel" | translate}}</option>
+                    <option value="2">{{"MohamedTaher" | translate}}</option>
+                    <option value="3">{{"MohamedRamdan"|translate}}</option>
+                </select>
+            </div>
+            <!-- *************************************************** -->
+
+            <!-- ******************** اختيار اسم المخزن ******************************* -->
+            <div class="col-12 col-sm-6 col-md-3 p-2">
+                <select [(ngModel)]="pageData.branch" class="form-select text-center">
+                    <option value="0" disabled selected class="text-center"> -- {{"Store" | translate}} --</option>
+                    <option value="1">{{"Main"|translate}}</option>
+                    <option value="2">{{"branch" | translate}} </option>
+                </select>
+            </div>
+            <!-- *************************************************** -->
+
+            <!-- ******************* التاريخ ******************************** -->
+
+          <div class="col-12 col-sm-6 col-md-3 p-2">
+     
+                  <mat-form-field class="col-12 p-0 m-0 text-center">
+                    <input matInput [matDatepicker]="picker3" class="fs-5" [(ngModel)]="pageData.date" [min]="minDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker #picker3></mat-datepicker>
+                  </mat-form-field>
+
+             </div>  
+            <!-- *************************************************** -->
+
+
+
+            <!-- ******************اجمالي الفاتوة كلها ********************************* -->
+            <div class="col-12 mt-3 px-2 text-center">
+                <input type="text" class="col-12 col-md-6 col-lg-5 text-center  mx-auto" disabled
+                    [value]="totalInvoice()" placeholder="Total Invoice" name="totalInvoice" id="">
+            </div>
+            <!-- *************************************************** -->
+
+            <!-- ***************** زرار اتمام البيع ********************************** -->
+            <div class="col-12  my-3 px-2 text-center">
+                <button class="SaveInvoice  col-12 col-md-6 col-lg-5 text-center  mx-auto"
+                    (click)="print()">{{"SaveInvoice" | translate}}</button>
+
+            </div>
+            <!-- *************************************************** -->
+
+
+        </div>
+
+
+
+        <div class="table-responsive mt-4 directory">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th class="col-3">{{"Name"|translate}}</th>
+                        <th class="col-3">{{"Amount" | translate}}</th>
+                        <th class="col-3">{{"Price" | translate}}</th>
+                        <th class="col-3">{{"Total"|translate}}</th>
+                    </tr>
+                </thead>
+
+
+
+                <tbody>
+
+                    <tr *ngFor="let dynamic of invoiceArray; let i = index;">
+
+                        <td>
+                            <!-- ****************** زرار الحذف والاضافة في table ********************************* -->
+                            <div class="d-flex justify-content-center ">
+                                <button (click)="addRow()" class="btn mx-2 btn-success text-center col-5  ms-2  pt-2">
+                                    <i class="fa fas fa-regular text-center  fa-circle-plus fs-4 "></i>
+                                </button>
+                                <button [disabled]="invoiceArray.length == 1" (click)="deleteRow(i)"
+                                    class="btn btn-danger  text-center col-5 mx-2 pt-2">
+                                    <i class="fa fa-trash text-center  fa-2x  fs-4"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <!-- *************************************************** -->
+
+                        <!-- *******************اختيار اسم المنتج******************************** -->
+                        <td>
+                            <select [(ngModel)]="invoiceArray[i].name" name="Product Item"
+                                class="form-select text-center itemSelect">
+                                <option selected disabled value="0">-- {{"ChooseDevice" | translate }} --</option>
+                                <option value="1">Mobile</option>
+                                <option value="2">TV</option>
+                                <option value="3">Tablet</option>
+                            </select>
+                        </td>
+                        <!-- *************************************************** -->
+
+                        <!-- ********************* كمية المنتج ****************************** -->
+                        <td>
+                            <input type="number" name="Amount" [(ngModel)]="invoiceArray[i].amount" placeholder="Amount"
+                                class="form-control text-center amount">
+                        </td>
+
+                        <!-- *************************************************** -->
+
+
+                        <!-- ******************* السعر ******************************** -->
+                        <td>
+                            <input type="number" name="Price" [(ngModel)]="invoiceArray[i].price" placeholder="Price"
+                                class="form-control text-center">
+                        </td>
+                        <!-- *************************************************** -->
+
+                        <!-- ****************** اجمالي كل منتج ********************************* -->
+                        <td>
+                            <input disabled [(ngModel)]="invoiceArray[i].price* invoiceArray[i].amount "
+                                placeholder="Total Price Item" name="total" class="form-control text-center"
+                                type="number" />
+                        </td>
+
+                        <!-- *************************************************** -->
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+    </section>
+
+
+
+</main>

@@ -1,0 +1,15 @@
+img {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+   
+}
+
+@media (min-width:993px) {
+
+    /* LapTop Screen */
+    section {
+        height: 67.8vh;
+    }
+}
+

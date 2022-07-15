@@ -1,0 +1,63 @@
+<main class="py-5">
+
+    <section class=" d-flex flex-wrap justify-content-evenly align-items-center ">
+
+        <!-- **************************************************************** -->
+        <div class="col-12 col-sm-6 col-lg-5 my-3">
+            <div class="d-block">
+                <canvas baseChart [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
+                    [type]="barChartType">
+                </canvas>
+            </div>
+            <!-- (chartClick)="chartClicked($event)" -->
+            <!-- (chartHover)="chartHovered($event)" -->
+            <!--  <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button> -->
+        </div>
+        <!-- **************************************************************** -->
+
+        <!-- **************************************************************** -->
+        <div class="col-12 col-sm-6 col-lg-5 my-3">
+            <div class="d-block">
+                <canvas baseChart [data]="doughnutChartData" [type]="doughnutChartType">
+                </canvas>
+            </div>
+        </div>
+        <!-- **************************************************************** -->
+
+
+            <!-- **************************************************************** -->
+
+            <div class="col-12 col-sm-6 col-lg-5 my-3">
+                  <div class="chart">
+                    <canvas baseChart
+                            [data]="pieChartData"
+                            [type]="pieChartType"
+                            [options]="pieChartOptions"
+                            [plugins]="pieChartPlugins">
+                    </canvas>
+                  </div>
+                </div>
+    <!-- **************************************************************** -->
+
+
+  <!-- **************************************************************** -->
+  <div class="col-12 col-sm-6 col-lg-5 my-3">
+    <div class="d-block" >
+      <canvas baseChart
+        [data]="radarChartData"
+        [options]="radarChartOptions"
+
+        [type]="radarChartType">
+      </canvas>
+    </div>
+  </div>
+    <!-- **************************************************************** -->
+
+
+
+    </section>
+
+
+
+
+</main>

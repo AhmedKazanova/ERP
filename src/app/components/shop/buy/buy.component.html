@@ -1,0 +1,202 @@
+<main class="direction">
+
+    <section class="direction pt-5" id="whenPrint">
+
+        <div class="d-flex flex-wrap align-items-center pt-lg-4 px-lg-3 direction">
+
+            <!-- ******** اجمالي منتجات في حاله انه ادمن************************ -->
+            <div class="col-10 col-md-4 col-lg-3 p-2 mx-auto ">
+                <button class="AddItems col-12" (click)="additems()">{{"AddItemsShop" | translate}}</button>
+            </div>
+            <!-- ******************************** -->
+
+
+            <!-- ************اختيار نوع الجهاز ******************** -->
+            <div class="col-10 col-md-4 col-lg-3 p-2 mx-auto ">
+                <select class="form-select text-center fs-5 w-100 " (change)="filterProduct($event)">
+                    <option class="text-center" value="" disabled selected>{{"ChooseDevice" | translate}}</option>
+                    <option class="text-center" *ngFor="let device of device" [value]="device.id">{{device.name}}
+                    </option>
+                </select>
+            </div>
+            <!-- ******************************** -->
+
+            <!-- ******** اجمالي المشتريات************************ -->
+            <div class="col-10 col-md-4 col-lg-3 p-2 mx-auto ">
+                <input type="number" disabled [value]="totalInvoice()" name="total"
+                    class="form-control fs-5 text-center  text-dark" id="">
+            </div>
+            <!-- ******************************** -->
+
+            <!-- ************** زرار الشراء****************** -->
+            <div class="col-10 col-md-4 col-lg-3 p-2 mx-auto ">
+                <button class="btn-buy fs-5  d-block w-100 " (click)="Submit()"> {{"Buy" | translate}} </button>
+            </div>
+            <!-- ******************************** -->
+
+            
+
+        </div>
+
+
+
+        <div class="d-flex flex-wrap justify-content-center mt-2 px-lg-3 mt-md-4">
+
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 p-2 "
+                *ngFor="let Products of productSelect , let i = index ; trackBy:trackHero ">
+
+                <div class="DivBorder">
+
+                    <!-- *************** صورة المنتج ***************** -->
+                    <img  [defaultImage]="Products.img" [lazyLoad]="Products.img"  height="200" width="200" class="col-12 p-0 mx-auto" alt="">
+                    <!-- ******************************** -->
+
+                    <!-- ************* اسم المنتج والسعر******************* -->
+                    <div class="d-flex justify-content-around py-3 px-2">
+                        <span class="text-center">{{"Name" | translate}} : {{Products.name}}</span>
+                        <span class="text-center">{{"Price" | translate}} : {{Products.price}}</span>
+                    </div>
+                    <!-- ******************************** -->
+
+                    <!-- ************ زرار وانبوت الكمية ******************** -->
+                    <div class="d-flex mb-4 px-2 justify-content-between">
+                        <button class="btn-Up col-2 mx-1" value="0" (click)="eventUP(i)"> + </button>
+                        <button class="btn-Down col-2  mx-1" value="0" [disabled]="Products.quantity <= 0"
+                            (click)="eventDown(i)"> - </button>
+                        <input type="number" (change)="val($event,i)" class="form-control text-center fs-6 w-50"
+                            [(ngModel)]="Products.quantity" name="quantity" id="quantity">
+                    </div>
+                    <!-- ******************************** -->
+
+                    <!-- ************* اجمالي حساب كل منتج ******************* -->
+                    <div class="col-12 px-2 pb-3">
+                        <input type="number" class="form-control fs-6 text-center" name=""
+                            [(ngModel)]="Products.quantity * Products.price" disabled id="">
+                    </div>
+
+                    <!-- ******************************** -->
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="SectionInvoice" class="invoice px-2">
+
+
+        <div id="Invoice" #Invoice class="table-responsive py-2  px-3">
+    
+            <div class="d-flex align-items-center justify-content-around my-4 px-1">
+    
+    
+                <div class="col-4 text-center">
+                    <h1 class="fs-2 fw-bolder">{{"PurchasesInvoice" | translate }}</h1>
+                </div>
+    
+    
+                <div class="logoInvoice col-4 p-0 text-center">
+                    <img src="/assets/photo/logo.webp" class="col-5" alt="logo" srcset="">
+                </div>
+            </div>
+    
+            <table class="table">
+                <thead>
+    
+                    <tr>
+                        <th class="col-2">{{"Name"|translate}}</th>
+                        <th class="col-2">{{"Amount" | translate}}</th>
+                        <th class="col-2">{{"Price" | translate}}</th>
+                        <th class="col-2">{{"Total"|translate}}</th>
+                        <th class="col-2">{{"Photo" | translate}}</th>
+                      
+                    </tr>
+                </thead>
+
+
+                <tbody>
+        
+                    <tr *ngFor="let Products of PurchasesItem , let i = index ; trackBy:trackHero ">
+                        <td>{{PurchasesItem[i].name}}</td>
+                        <td>{{PurchasesItem[i].quantity}}</td>
+                        <td>{{PurchasesItem[i].quantity * PurchasesItem[i].price }}</td>
+                        <td>{{PurchasesItem[i].price}}</td>
+                        <td><img [src]="PurchasesItem[i].img" width="250" height="250" alt=""></td>
+                            </tr>
+            
+                </tbody>
+    
+
+            </table>
+    <div class="d-flex align-items-center"> 
+    <div class="mt-4 px-3 d-flex pb-3 pt-4 col-6  totlinvo info">
+        <p class="fs-3"> {{"TotalInvoice" | translate}} : </p>
+        <p class="fs-3 mx-3"> {{dataPage.totalSale}} </p>
+    </div>
+    <div class="col-6 text-center">
+        
+        <img src="/assets/photo/signature.png" class="col-5" alt="" srcset="">
+    </div>
+    
+    </div>
+        </div>
+    
+    </section>
+    
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="table-responsive ">
+        <table class="table table-dark fs-2 table-hover table-striped direction" dir="rtl">
+      
+            <thead>
+                <tr>
+                    <th class="py-2 col-1">#</th>
+                    <th class="col-2">name</th>
+                    <th class="col-2">price</th>
+                    <td class="col-2">img</td>
+                    <td class="col-2">amount</td>
+                    <td class="col-2">totalPrice</td>
+                   
+                </tr>
+            </thead>
+       
+            <tbody>
+        
+                <tr *ngFor="let Products of productSelect , let i = index ; trackBy:trackHero ">
+                    <td>{{i+1}}</td>
+                    <td>{{Products.name}}</td>
+                    <td>{{Products.price}}</td>
+                    <td><img [src]="Products.img" width="250" height="250" alt=""></td>
+                    <td class="px-3">
+                        <div class="d-flex">
+                            <button class="btn btn-info col-3" value="0" (click)="eventUP(i)"> + </button>
+                            <button class="btn btn-danger col-3  " value="0" [disabled]="Products.quantity <= 0"  (click)="eventDown(i)" > - </button>
+                            <input type="number" (change)="val($event)" class="form-control text-center w-75"  [(ngModel)]="Products.quantity" name=""
+                                id="">
+                        </div>
+                    </td>
+                    <td> <input type="number" class="form-control text-center" name=""
+                            [(ngModel)]="Products.quantity * Products.price" disabled id=""></td>
+                           
+                
+                           
+                        </tr>
+        
+            </tbody>
+        </table>
+    </div> -->

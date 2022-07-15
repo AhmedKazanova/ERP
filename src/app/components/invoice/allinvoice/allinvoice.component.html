@@ -1,0 +1,105 @@
+
+
+<main class="direction   pt-5 ">
+    <section class="px-2">
+
+    <div class="px-2">
+        <button class="AddInvoice fs-5 px-3" (click)="addProduct()"> {{"AddInvoice" | translate }} </button>
+    </div>
+    
+    
+    <h1 class="fs-1 my-3 mb-lg-4 text-center ">{{"AllInvoice" | translate }}</h1>
+    
+    
+    <div class="table-responsive direction" >
+    <table class="table  table-hover table-striped" >
+    <thead>
+        <tr>
+            <th class="col-1 ">#</th>
+            <th class="col-2">{{"Action" | translate }}</th>
+            <th class="col-2">{{"Client" | translate}}</th>
+            <th class="col-2">{{"Store"|translate}}</th>
+            <th class="col-1">{{"Date" | translate }}</th>
+            <th class="col-2">{{"Total" | translate }}</th>
+            <th class="col-2">{{"Options" | translate }}</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    <tr *ngFor="let allInvoice of allInvoice ; let i = index">
+        <td class="py-3"> {{i+1}}    </td>
+        <td>
+            <div>
+                <select [(ngModel)]="allInvoice.action" disabled class="form-control"name="" id="">
+                        <option class="text-center"  value="0">-- {{"ChooseAction" |translate }} -- </option>
+                        <option class="text-center"  value="1">{{"Transformation" |translate }} </option>
+                        <option class="text-center"  value="2">{{"purchases" | translate }}</option>
+                        <option class="text-center"  value="3">{{"bounce" | translate }}</option>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div>
+                <select [(ngModel)]="allInvoice.client" disabled class="form-control"name="" id="">
+                        <option class="text-center"  value="0">-- {{"clientName" | translate }} -- </option>
+                        <option class="text-center"  value="1"> {{"AhmedAdel" | translate }} </option>
+                        <option class="text-center"  value="2">{{"MohamedTaher" | translate }}</option>
+                        <option class="text-center"  value="3"> {{"MohamedRamdan" | translate }} </option>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div>
+                <select [(ngModel)]="allInvoice.branch" disabled class="form-control"name="" id="">
+                        <option class="text-center"  value="0">-- {{"Store" | translate}} -- </option>
+                        <option class="text-center"  value="1">{{"Main" | translate }}</option>
+                        <option class="text-center"  value="2">{{"branch" | translate }}</option>
+                </select>
+            </div>
+        </td>
+        <td>
+
+         <mat-form-field class="col-12 p-0 m-0 mt-2 text-center">
+            <input matInput [disabled]="true" class="m-0" [matDatepicker]="picker3" [(ngModel)]="allInvoice.date" >
+           
+            <mat-datepicker class="m-0 p-0" #picker3></mat-datepicker>
+          </mat-form-field>
+
+
+
+        </td>
+        <td>
+            <input type="number" class="form-control text-center" disabled="" [(ngModel)]="allInvoice.totalInvoice" name="" id="">
+        </td>
+        <td class="p-4">
+            <div class="d-flex justify-content-around align-items-center">
+                <button class="btn btn-danger d-block mx-3 col-6 " title="{{'Delete' | translate}}" (click)="openDialog('Delete',allInvoice)"> 
+                    <i class="fa-solid fa-trash-can"></i>
+                 </button>
+                 <button class="btn btn-info text-white mx-3 d-block col-6 " title="{{'Details' | translate}}" [routerLink]="['/invoice/invoicedetails/',allInvoice.id]"> 
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+            </div>
+        </td>
+    
+    
+    
+    </tr>
+    
+    
+    </tbody>
+    <tbody *ngIf="allInvoice.length <= 0">
+        <tr>
+            <td class="p-0" colspan="12"> 
+                <div class="alert alert-danger text-danger m-0 py-4">{{"DataNotFound" | translate}}</div>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+    
+</section>
+
+</main>
+
+

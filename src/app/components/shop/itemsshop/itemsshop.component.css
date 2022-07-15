@@ -1,0 +1,29 @@
+
+
+
+.AddInvoice , .AddEmployee  {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: 0.25rem; 
+    padding: 0.6rem;
+    background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%)
+}
+
+
+
+
+
+  table th {
+    text-align: center !important;
+    padding: 1rem !important;
+    color: white !important;
+    font-size: 1.8rem !important;
+  }
+table td {
+    text-align: center !important;
+    font-size: 1.3rem !important;
+    color: white !important;
+}
+  

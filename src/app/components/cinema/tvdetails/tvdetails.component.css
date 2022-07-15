@@ -1,0 +1,40 @@
+
+
+main {
+    background-color: #eee;
+}
+
+main img {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+section {
+    letter-spacing: 1px;
+   
+}
+
+.shadowX {
+     color: #eee;
+     background-color: transparent;
+}
+
+@media (max-width:450px){
+    .shadowX {
+        display: none;
+    }
+}
+.story {
+    line-height: 25px;
+}
+.vote {
+  
+    background-color: #183850;
+   border: 1px solid white;
+   font-size: 17px;
+   padding: 6px;
+   border-radius: 50%;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+

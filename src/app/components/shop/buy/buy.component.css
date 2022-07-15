@@ -1,0 +1,134 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+
+
+main {
+    background: #FAFAD2!important;
+    padding-bottom: 5rem;
+  }
+
+
+.btn-Down,.btn-Up{
+    border-radius: 5px;
+    font-size: 1.6rem;
+    color: white;
+}
+
+.btn-Up {
+    background-color: CadetBlue;
+}
+.btn-Down  {
+    background-color: #6495ED;
+}
+.btn-Down:disabled{
+ background-color: #A9A9A9;
+}
+.btn-buy {
+    background-color: CadetBlue;
+    padding: 5px 10px !important;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white;
+    border-radius: 5px;
+}
+
+.DivBorder {
+    border: 2px solid #4682B4;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+
+.AddItems {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    padding: 0.6rem;
+    background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%)
+  }
+
+  table {
+    background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%) !important;
+    color: white !important;
+
+    
+  }
+
+
+  table img {
+    width: 5rem;
+    height: 5rem;
+  }
+  @media (max-width:450px) {
+    table {
+      background: transparent !important;
+    }
+    table thead {
+      display: none;
+    }
+    table tbody {
+      border: none !important;
+    }
+    table tr {
+      display: flex !important;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      margin-top: 15px !important;
+      padding: 7px 0px;
+      background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%) !important;
+  
+    }
+    table tr td {
+      display: block !important;
+      width: 100%;
+     
+      
+    }
+    table tr {
+      border-radius: 10px !important;
+    }
+  }
+  
+  table th {
+    color: white;
+    padding: 0.75rem;
+    font-size: 1.4rem !important;
+  
+  }
+  .table-hover > tbody > tr:hover > * {
+   background-color:#224b66 ;
+    color: white;
+  }
+  
+  table .mat-form-field-infix {
+    padding: 0px !important;
+  }
+  
+  .logoInvoice img {
+    border-radius: 50%;
+  }
+  
+  
+  .info {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-weight: 700;
+  }
+  
+  #Invoice {
+    background-image: ur;
+  }
+  .totlinvo {
+    border: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+  }
+  
+  

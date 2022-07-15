@@ -1,0 +1,68 @@
+
+
+section {
+    min-height: 100vh;
+    position: relative;
+    background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+video {
+    min-height: 100vh;
+    object-fit: cover;
+    
+}
+#intro {
+    z-index: 2;
+    position: relative;
+   
+}
+#intro-loop {
+    z-index: 1;
+    position: absolute;
+    
+}
+#intro-loop,#intro {
+    min-height: 100vh;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    
+}
+
+.Welcome {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.Welcome h1,.Welcome h2 {
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-shadow: 1px 1px 7px #bbb;
+    line-height: 45px;
+}
+
+@media  (min-width:768px) {
+    .Welcome h1,.Welcome h2 {
+        font-size: 6vh;
+    }
+}
+@media (max-width:450px) {
+    .Welcome h1,.Welcome h2 {
+        font-size: 4vh;
+    }
+}
+
+

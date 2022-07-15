@@ -1,0 +1,229 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+main {
+    background: -webkit-gradient(linear, left top, left bottom, from(#141e30), to(#243b55)) !important;
+    background: -o-linear-gradient(#141e30, #243b55) !important;
+    background: linear-gradient(#141e30, #243b55) !important;
+  }
+  
+  
+  .login {
+    overflow: hidden;
+    background-color: white;
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    position: relative;
+    -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+    -webkit-transition: -webkit-transform 300ms, -webkit-box-shadow 300ms;
+    transition: -webkit-transform 300ms, -webkit-box-shadow 300ms;
+    -o-transition: transform 300ms, box-shadow 300ms;
+    transition: transform 300ms, box-shadow 300ms;
+    transition: transform 300ms, box-shadow 300ms, -webkit-transform 300ms, -webkit-box-shadow 300ms;
+    -webkit-box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+            box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+  }
+  .login::before, .login::after {
+    content: "";
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: 1 !important;
+  }
+  .login::before {
+    left: 50%;
+    bottom: 0;
+    right: 50%;
+    top: 0;
+    background-color: rgba(69, 105, 144, 0.15);
+    -webkit-animation: wawes 6s infinite linear;
+            animation: wawes 6s infinite linear;
+  }
+  .login::after {
+    left:50%;
+    bottom: 0;
+    right: 50%;
+    top: 0;
+    background-color: rgba(2, 128, 144, 0.2);
+    -webkit-animation: wawes 7s infinite;
+            animation: wawes 7s infinite;
+  }
+  .login > input {
+    font-family: "Asap", sans-serif;
+    display: block;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    width: 100%;
+    border: 0;
+    padding: 10px 10px;
+    margin: 15px -10px;
+  
+  }
+  .login input,  .login a {
+    position: relative !important;
+    z-index: 5;
+  }
+  
+  
+  @-webkit-keyframes wawes {
+    from {
+      -webkit-transform: rotate(0);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes wawes {
+    from {
+      -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+      transform: rotate(0);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  
+  
+  .custom-btn {
+    color: #fff;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+     -webkit-box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+             box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  @-webkit-keyframes shiny-btn1 {
+    0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+    80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+  }
+  /* 12 */
+  .btn-12{
+  border:none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 25%;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+  }
+  .btn-12 span {
+  background: rgb(0,172,238);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0,172,238,1)), to(rgba(2,126,251,1)));
+  background: -o-linear-gradient(bottom, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  -webkit-box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+          box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  margin:0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  }
+  .btn-12 span:nth-child(1) {
+  -webkit-box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+          box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -ms-transform-origin: 50% 50% -20px;
+      transform-origin: 50% 50% -20px;
+  }
+  .btn-12 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -ms-transform-origin: 50% 50% -20px;
+      transform-origin: 50% 50% -20px;
+  }
+  .btn-12:hover span:nth-child(1) {
+  -webkit-box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+          box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  }
+  .btn-12:hover span:nth-child(2) {
+  -webkit-box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+          box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .direction.RTL select.form-select,
+  .direction.RTL input.form-control,
+  .direction.RTL button {
+     background-position: left !important;
+     -webkit-box-shadow: none !important;
+             box-shadow: none !important;
+  }
+  .direction.LTR select.form-select,
+  .direction.LTR input.form-control,
+  .direction.LTR button {
+     background-position: right !important;
+     -webkit-box-shadow: none !important;
+             box-shadow: none !important;
+  }
