@@ -12,13 +12,12 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { AboutComponent } from './components/about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { TranslateModule , TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { InterceptorService } from './service/interceptor/interceptor.service';
 import { TokenInterceptorService } from './service/interceptor/token-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
+import { TranslateModule , TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { MatProgressBarModule} from '@angular/material/progress-bar'
 
 
 @NgModule({
@@ -38,6 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatProgressBarModule,
     ReactiveFormsModule,
     MatSnackBarModule,
     TranslateModule.forRoot({

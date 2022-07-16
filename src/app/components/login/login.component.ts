@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   userInfo: UserInfo = { email: '', password: '', name: '' }
   lang: string = ''
+  
   userFormGrouplogin: FormGroup = new FormGroup(
     {
       email: new FormControl(null, [Validators.required, Validators.email]),

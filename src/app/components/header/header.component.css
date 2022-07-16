@@ -59,6 +59,15 @@
 
 }
 
+.ProgressBar {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    z-index: 99999;
+}
+
 @media (max-width: 991px) {
 
 

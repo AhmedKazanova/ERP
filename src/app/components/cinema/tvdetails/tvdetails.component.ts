@@ -78,10 +78,15 @@ export class TvdetailsComponent implements OnInit, OnDestroy {
 
 
     this._ActivatedRoute.data.subscribe(
-      (dataresolve)=>{
-         this.TvDetail = dataresolve['dataresolve']
-        this.production_companies = this.TvDetail.production_companies[0].name
-      }
+     {
+     next: (dataresolve)=>{
+        this.TvDetail = dataresolve['dataresolve']
+       this.production_companies = this.TvDetail.production_companies[0].name
+     },
+     error: (error)=>{
+      this._ErrorHandlerService.handleError(error)
+    }
+     }
     )
 
 

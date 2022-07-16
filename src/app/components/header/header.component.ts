@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core'
 import { AuthService } from 'src/app/service/auth/auth.service';
 import { LanguageService } from 'src/app/service/language/language.service';
+import { LoaderService } from 'src/app/service/loader/loader.service';
 
 declare var $: any
 
@@ -22,7 +23,8 @@ export class HeaderComponent implements OnInit {
     private _Router: Router,
     private translate: TranslateService,
     private _LanguageService: LanguageService,
-    private _AuthService: AuthService
+    private _AuthService: AuthService,
+    public _LoaderService:LoaderService
   ) { }
 
 

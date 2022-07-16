@@ -9,7 +9,7 @@ import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { TvdetailsComponent } from './tvdetails/tvdetails.component';
 import { LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS, ScrollHooks } from 'ng-lazyload-image'; // <-- import it
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 
 
 @NgModule({
@@ -25,6 +25,7 @@ import { LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS, ScrollHooks } from 'ng-lazyl
     NgbPaginationModule,
     NgbAlertModule,
     LazyLoadImageModule,
+    MatProgressSpinnerModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
@@ -41,7 +42,7 @@ export class CinemaModule { }
 
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http,'../assets/i18n/','.json');
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json');
 }
 
 

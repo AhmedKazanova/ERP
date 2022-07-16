@@ -1,7 +1,7 @@
 
 
-.header {
-        background-image: url(/assets/photo/header.webp);
+.cinemaHeader {
+   
         min-height: 100vh;
         background-position: center;
         background-repeat: no-repeat;
@@ -9,8 +9,23 @@
 }
 
 
-
-
+.MovieContainer {
+    position: relative;
+}
+.loaderSpinner {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 99999999;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    padding: 50px 0px;
+}
 img {
     cursor: pointer;
 }
@@ -159,3 +174,18 @@ img {
 
 }
 
+.isOffline {
+    min-height: 100vh;
+    background: #ccc !important;
+}
+
+.isOffline i {
+    font-size: 5rem;
+    color: #1976d2;
+}
+
+.isOffline p {
+    font-size: 4.5rem;
+    color: #1976d2;
+    font-weight: 700;
+}

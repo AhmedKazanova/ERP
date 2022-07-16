@@ -2,6 +2,9 @@
 <header id="headerX" class="headerX direction">
 
 
+    <div *ngIf="_LoaderService.isLoading | async" class="ProgressBar">
+     <mat-progress-bar mode="query" class="">   </mat-progress-bar>
+    </div>
 
     <!-- *************** lOGO **************************** -->
     <a  class="logo  p-0">

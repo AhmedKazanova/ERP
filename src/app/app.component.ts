@@ -11,7 +11,8 @@ declare var $: any
 export class AppComponent implements OnInit {
   
   ngOnInit(): void {
-
+  
+      
   }
 
   title = 'AngularERP';

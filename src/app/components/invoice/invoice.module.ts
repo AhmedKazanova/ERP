@@ -52,6 +52,6 @@ import { MatInputModule } from '@angular/material/input';
 export class InvoiceModule { }
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http,'../assets/i18n/','.json');
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json');
 }
 

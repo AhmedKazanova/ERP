@@ -72,13 +72,15 @@ export class MoviedetailsComponent implements OnInit, OnDestroy {
     //  )
 
     this.CallingApi = this._ActivatedRoute.data.subscribe(
-      (dataresolve)=>{
-        this.MovieDetail = dataresolve['dataresolve']
-        this.production_companies = this.MovieDetail.production_companies[0].name
-      },
-      (error)=>{
-        this._ErrorHandlerService.handleError(error)
-      }
+   {
+   next:(dataresolve)=>{
+      this.MovieDetail = dataresolve['dataresolve']
+      this.production_companies = this.MovieDetail.production_companies[0].name
+    },
+   error: (error)=>{
+      this._ErrorHandlerService.handleError(error)
+    }
+   }
     )
 
     // الشعور بالتغير في اللغة من اجل الفالديشن

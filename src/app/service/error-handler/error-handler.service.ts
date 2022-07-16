@@ -9,35 +9,27 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root'
 })
 export class ErrorHandlerService {
-  lang:string = ''
+
   constructor(private _LanguageService:LanguageService , private _MatSnackBar:MatSnackBar){
-    this._LanguageService.change.subscribe(
-      (val)=>{
-        if(val =='ar'){
-          this.lang = 'ar'
-        }else {
-          this.lang = 'en'
-        }
-      }
-    )
+    
+
   }
+
+
+
+
   handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {
-   //   alert('Client Side Error : ' + errorResponse.error.message);
-      this.openSnackBar('Client Side Error','')
+        // alert('Server Side Error:' + errorResponse);
+        this._MatSnackBar.open('Server Side Error',``)
     } else  {
-      this.openSnackBar('Server Side Error','')
-   //   alert('Server Side Error : ' + errorResponse);
+      this._MatSnackBar.open('Client Side Error',``)
     }
-   // return throwError('please refresh the website again, maybe there are problems with the server!!');
- return  throwError(() => {
-    const error = (`please refresh the website again, maybe there are problems with the server`);
-    this.openSnackBar('Please Refresh The Website Again','')
-    return error;
-  });
+    return  throwError(() => {
+      const error = (`please refresh the website again, maybe there are problems with the server`);
+      return error;
+    });
   }
-
-
 
   
   // الرسائل

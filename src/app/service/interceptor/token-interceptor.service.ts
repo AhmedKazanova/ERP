@@ -18,16 +18,16 @@ export class TokenInterceptorService implements HttpInterceptor {
 
     // ان كل ما مستخدم يروح علي راوت معين يبقي معاه توكين الهيدر ان هو ادمن او حاجة ومرة واحدة 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-   // console.log('Send Token')
-    // const authService = this.injector.get(AuthService)
-    // const tokenReq = req.clone({
-    //   setHeaders:{
-    //     Authorization: `Bearer ${authService.getToken()} `,
-    //   //  Authorization: 'Bearer asKJjkgJKHGjhgjhGHJgjkhJHvjHhjVjhVVJHvJHVhjVHJvJHVhvJHvkjh '
-    //   }
-    // })
-   // return next.handle(tokenReq);
-   return next.handle(req)
+
+    const authService = this.injector.get(AuthService)
+    const tokenReq = req.clone({
+      setHeaders:{
+        Authorization: `Bearer ${authService.getToken()} `,
+      //  Authorization: 'Bearer asKJjkgJKHGjhgjhGHJgjkhJHvjHhjVjhVVJHvJHVhjVHJvJHVhvJHvkjh '
+      }
+    })
+   return next.handle(tokenReq);
+  // return next.handle(req)
   }
 
   

@@ -157,12 +157,20 @@ input,select{
     border: 3px dotted #bbb !important;
     border-radius: 5px !important;
     min-height: 95vh !important;
-    background-image: url(/assets/photo/bginvoice3.webp) !important;
+    background-image: url(assets/photo/bginvoice3.webp) !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
   }
-  
+  .invoicePage {
+    background-image: url(assets/photo/Mony.webp) !important;
+  }
+  .cinemaHeader {
+    background-image: url(assets/photo/header.webp);
+  }
+  .settingsPage {
+    background-image: url(assets/photo/Settings.webp) !important;
+  }
 @media print {
 
     #SectionInvoice {

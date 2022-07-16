@@ -1,13 +1,13 @@
 <main>
 
-    <section class="header">
+    <section class="header cinemaHeader">
 
 
 
 
     </section>
 
-    <section class="content">
+    <section class="content" >
 
 
 
@@ -33,7 +33,17 @@
 
 
 
-        <div class=" d-flex flex-wrap justify-content-center">
+        <div class=" d-flex flex-wrap justify-content-center MovieContainer">
+
+            <div *ngIf="_LoaderService.isLoading | async" class="loaderSpinner">
+                <div class="col-12 text-center mx-auto">
+                    <mat-spinner class="mx-auto"></mat-spinner>
+                </div>
+
+              <div class="col-12 text-center mx-auto">
+                <mat-spinner class="mx-auto"></mat-spinner>
+              </div>
+            </div>
 
             <ng-container *ngFor="let Getall of ReturnAll">
 
@@ -77,10 +87,34 @@
         </div>
 
 
+        <div class="Pagination py-3 px-2 col-12 d-flex justify-content-center overflow-hidden">
+
+            <ngb-pagination
+            [collectionSize]="totalItems"
+              [(page)]="page"
+              (pageChange)="pageChanged($event)"
+              [maxSize]="3" 
+              [rotate]="true"
+         
+              ></ngb-pagination>
+            <br>
+
+
+        </div>
 
     </section>
 
+    <!-- <section class="isOffline" *ngIf="isOffline">
 
+<div class="text-center py-5">
+    <i class="fas fa-regular fa-circle-exclamation"></i>
+
+    <p class="my-4">REQUEST FOR DOCUMENT FAILED</p>
+    <span class="fs-4">We are unable to retrieve the "Cinema" page at this time.
+        Please check your connection and try again later.</span>
+</div>
+
+    </section> -->
 
 
 
