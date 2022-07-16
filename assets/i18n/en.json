@@ -1,0 +1,134 @@
+{
+
+    "Email":"Email",
+    "Emailrequired":"Email required",
+    "EmailWrong":"Email Wrong",
+    "Password":"Password",
+    "Passwordrequired":"Password required",
+    "PasswordWrong":"Password Wrong",
+    "confirmPassword":"Confirm Password",
+    "PasswordNotMatch":"Password And ConfirmPassword Not Match",
+    "PasswordrequiredRE":"Password required - Min 8 Max 16 number",
+    "Register":"Register",
+    "RegisterClick":"Click",
+    "Login":"Login",
+    "Logout":"Logout",
+    "Click":"Click",
+    "Name":"Name",
+    "Namerequired":"Name required Min 3 Char",
+    "Phone":"Phone",
+    "Phonerequired":"Phone required",
+    "Age":"Age",
+    "Agerequired":"Age required less 18",
+    "Country":"Country",
+    "countryrequired":"Country required",
+    "City":"City",
+    "cityrequired":"City required",
+    "PostCode":"Postcode",
+    "postCoderequired":"postCode required lenght 6",
+    "Home":"Home",
+    "Dashboard":"Dashboard",
+    "Settings":"Settings",
+    "Invoice":"Invoice",
+    "Services":"Services",
+    "Shop":"Shop",
+    "Buy":"Buy",
+    "ChooseDevice":"ChooseDevice",
+    "Price":"Price",
+    "ChooseAction":"Choose Action",
+    "Transformation":"Transformation",
+    "purchases":"Purchases",
+    "bounce":"Bounce",
+    "clientName":"Client Name",
+    "client":"Client",
+    "AhmedAdel":"Ahmed Adel",
+    "MohamedTaher":"Mohamed Taher",
+    "MohamedRamdan":"Mohamed Ramdan",
+    "Store":"Store",
+    "Main":"Main",
+    "branch":"Branch",
+    "SaveInvoice":"Save Invoice",
+    "Amount":"Amount",
+    "Total":"Total",
+    "AddInvoice":"Add Invoice",
+    "Client":"Client",
+    "Date":"Date",
+    "Action":"Action",
+    "Options":"Options",
+    "Details":"Details",
+    "Delete":"Delete",
+    "Edit":"Edit",
+    "AllInvoice":"All Invoice",
+    "Back":"Back",
+    "Print":"Print",
+    "UpdateInvoice":"Update Invoice",
+    "UpdateProfile":"Update Profile",
+    "UpdateClick":"Update",
+    "ChangePassword":"Change Password",
+    "ChangePasswordClick":"Change",
+    "EditeProfile":"Edite Profile",
+    "OldPassword":"Old Password",
+    "NewPassword":"New Password",
+    "OldPasswordWrong":"Old Password Wrong",
+    "RowAction":"Row Action",
+    "Suretodelete":"Sure to delete ?",
+    "Cancel":"Cancel",
+    "Salary":"Salary",
+    "ShowAllInvoice":"Show All Invoice",
+    "AddProduct":"Add Product",
+    "Cinema":"Cinema",
+    "Item":"Item",
+    "HomePage":"Page",
+    "WebSite":"WebSite",
+    "ProductionCompany":"Comp",
+    "ReleaseDate":"Date",
+    "Genres":"Genres",
+    "Langu":"Langu",
+    "TheStory":"The Story",
+    "Budget":"Budget",
+    "AddItemsShop":"Add Items Shop",
+    "DataNotFound":"Data Not Found",
+    "invoiceNum":"invoice",
+    "TotalInvoice":"Total Invoice",
+    "About":"About",
+    "Photo":"Photo",
+    "PurchasesInvoice":"Purchases Invoice"
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
