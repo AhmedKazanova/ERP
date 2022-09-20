@@ -1,0 +1,39 @@
+
+<main class="direction d-flex justify-content-center align-items-center  mt-sm-0 pt-5 pt-sm-0">
+
+    <section class="col-12 col-md-8  col-xl-6 mt-5  px-2">
+
+        <form [formGroup]="userFormGrouplogin" class="login pb-5">
+            <!-- ************************ Email ********************************************************************** -->
+            <div class="col-12 ">
+                <input required type="email" autocomplete="email" formControlName="email" class="form-control fs-5" name="email" id="email"
+                    placeholder="{{'Email' | translate}}"
+                    [ngClass]="{'is-valid': email?.valid === true && email?.touched === true , 'is-invalid': email?.valid === false && email?.touched === true || email?.value !== this.userInfo.email && email?.touched === true}">
+                <p *ngIf="email?.touched === true && email?.errors !== null " class="text-danger fs-6 py-2">
+                    {{'Emailrequired' | translate}} </p>
+                <p *ngIf="email?.value?.toLowerCase() !== this.userInfo?.email?.toLowerCase() && email?.touched === true && email?.valid === true "
+                    class="text-danger fs-6 pt-2"> {{"EmailWrong" | translate}} </p>
+            </div>
+            <!-- **************************************************************************************************** -->
+
+            <!-- ************************ Password كلمة المرور********************************************************************** -->
+            <div class="col-12 mt-3">
+                <input required formControlName="password" autocomplete="password" type="password" class="form-control fs-5" name="password"
+                    id="password" placeholder="{{'Password' | translate}}"
+                    [ngClass]="{'is-valid': password?.valid === true && password?.touched === true , 'is-invalid': password?.valid === false && password?.touched === true || password?.value !== this.userInfo.password && password?.touched === true }">
+                <p *ngIf="password?.touched === true && password?.errors !== null " class="text-danger fs-6 pt-2">
+                    {{"Passwordrequired" | translate}} </p>
+                <p *ngIf="password?.value !== this.userInfo?.password && password?.touched === true && password?.valid === true "
+                    class="text-danger fs-6 pt-2"> {{"PasswordWrong"|translate}} </p>
+            </div>
+            <!-- ********************************************************************************************** -->
+
+            <!-- ************************ Login تسجيل الدخول****************************************************************** -->
+            <div class="col-12 my-4 text-center">
+                <button (click)="login(userFormGrouplogin)"
+                    class="custom-btn btn-12 d-block w-100 mx-auto fs-5"><span>{{"Click"|translate}}</span><span>{{"Login"|translate}}</span></button>
+            </div>
+            <!-- ********************************************************************************************** -->
+        </form>
+    </section>
+</main>

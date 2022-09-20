@@ -1,0 +1,71 @@
+
+
+
+<main>
+    <section class="pt-4">
+
+        <div class="d-flex flex-wrap justify-content-between py-3 py-md-5">
+
+
+            <div class="col-12 col-md-6 text-center">
+                <a  target="blank" [href]="TvDetail.homepage">
+                     <img  [defaultImage]="ImgSrc+TvDetail.poster_path" [lazyLoad]="ImgSrc+TvDetail.poster_path" class="col-10 col-sm-8  mb-3 mx-auto"alt="">
+                     </a>
+            </div>
+
+
+            <div class="col-12 col-md-6 ">
+
+                <h2 class=" text-center fw-bold"
+                 *ngIf="TvDetail.name !== null || TvDetail.name !== undefined"
+                 >{{TvDetail.name}} <span class="vote ms-2 text-white">
+                    {{TvDetail.vote_average}}</span></h2>
+
+                    <p class="my-1 py-2 px-1 d-flex  " *ngIf="TvDetail.homepage !== null || TvDetail.homepage!== undefined">
+                    <span class="fw-bold col-3 col-lg-2"> {{"HomePage" | translate}} :</span>  <a target="blank" [href]="TvDetail.homepage"> {{"WebSite" | translate}} </a>
+                    </p>
+
+                    <p class="my-1 py-2 px-1 d-flex " *ngIf="production_companies !== null || production_companies !== undefined">
+                    <span class="fw-bold col-3 col-lg-2">{{"ProductionCompany" | translate}} :</span>
+                        {{production_companies}} </p>
+
+
+                            <p class="my-1 py-2 px-1 d-flex " *ngIf="TvDetail.release_date !== null || TvDetail.release_date !== undefined">
+                                <span class="fw-bold col-3 col-lg-2">{{"ReleaseDate" | translate}} :</span>
+                                {{TvDetail.release_date   }} </p>
+
+                            <p class="py-2 px-1 d-flex  flex-wrap  my-1" *ngIf="TvDetail.genres !== null || TvDetail.genres !== undefined"    >
+                                <span class="fw-bold col-3 col-lg-2">{{"Genres" | translate }} : </span>
+                                <span class="col-3" *ngFor="let genres of TvDetail.genres , let i = index  ">
+                                    {{TvDetail?.genres[i]?.name}} <span class="shadowX mx-1"> . </span>  </span>
+                            </p>
+
+                            <p class="my-1 py-2 px-1 d-flex flex-wrap" *ngIf="TvDetail.spoken_languages !== null || TvDetail.spoken_languages !== undefined  ">
+                                <span class="fw-bold col-3 col-lg-2">{{"Langu" | translate }} :
+
+                            </span>
+
+                                <span class="col-3 " *ngFor="let languages of TvDetail.spoken_languages , let i = index ">{{TvDetail.spoken_languages[i]?.name}} <span class="shadowX mx-1"> . </span> </span>
+                            </p>
+
+                            <p class="my-1 py-2 px-1 d-flex " *ngIf="TvDetail.budget !== null || TvDetail.budget !== undefined  ">
+                                <span class="fw-bold col-3 col-lg-2">{{"Budget" | translate }} :</span>
+                                <span class="">{{TvDetail.budget}}</span>
+                            </p>
+
+                            <p class=" py-2 px-1 d-flex flex-wrap story" *ngIf="TvDetail.overview !== null || TvDetail.overview !== undefined  ">
+                                 <span class="fw-bold col-12 col-lg-2">{{"TheStory" | translate }} :</span>  {{TvDetail.overview}} </p>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </section>
+
+</main>

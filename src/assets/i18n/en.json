@@ -92,7 +92,21 @@
     "TotalInvoice":"Total Invoice",
     "About":"About",
     "Photo":"Photo",
-    "PurchasesInvoice":"Purchases Invoice"
+    "PurchasesInvoice":"Purchases Invoice",
+    "addExpenses":"Add Expenses",
+    "Expenses":"Expenses",
+    "Close":"Close",
+    "Save":"Save",
+    "operatingexpenses":"Operating Expenses",
+    "Bankexpenses":"Bank Expenses",
+    "Shippingexpenses":"Shipping Expenses",
+    "ChooseExpenses":"Choose Expenses",
+    "ShowExpenses":"Show Expenses",
+    "Discount":"Discount",
+    "AmountDiscount":"Discount Value",
+    "TotalPriceItem":"Total Price Item",
+    "ExpensesVal":"Expenses Value",
+    "TotalExpenses":"Total Expenses"
 
 
 
@@ -102,7 +116,10 @@
 
 
 
-  
+
+
+
+
 
 
 
