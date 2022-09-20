@@ -128,7 +128,7 @@ export class InvoicedetailsComponent implements OnInit , OnDestroy {
 
       this.invoiceObj = this.allInvoice.find(el => el.id == this.paramId)
 
-      console.log(this.invoiceObj )
+     // console.log(this.invoiceObj )
       this.expensesArray = this.invoiceObj.expenses
       if(this.expensesArray.length == 0){
         this.expensesArray = [{ExpName:0,expenses:""}]
@@ -173,36 +173,36 @@ export class InvoicedetailsComponent implements OnInit , OnDestroy {
 
 
 
-  maxVal(event: any) {
-    let value = Number(event.target.value);
+  maxVal(i: any ) {
 
-    if (value > 100) {
+//console.log(this.dataRow[i].discount)
+    if (this.dataRow[i].discount > 100) {
       if (this.lang == 'ar') {
         this.openSnackBar('100 اقصي رقم', '');
-        event.target.value = '';
-        return;
+        this.dataRow[i].discount = "";
+        return
       } else {
         this.openSnackBar('Max Number 100', '');
-        event.target.value = '';
+        this.dataRow[i].discount= "";
         return;
       }
-    } else if (value < 0) {
+    } else if (this.dataRow[i].discount < 0) {
       if (this.lang == 'ar') {
         this.openSnackBar('خطا بالرقم', '');
-        event.target.value = '';
+        this.dataRow[i].discount = '';
         return;
       } else {
         this.openSnackBar('Number Wrong', '');
-        event.target.value = '';
+        this.dataRow[i].discount = '';
         return;
       }
     }
   }
+
+
+
   discountVal(i: any) {
-    if (
-      this.dataRow[i].discount > 0 &&
-      this.dataRow[i].discount <= 100
-    ) {
+    if ( this.dataRow[i].discount > 0 && this.dataRow[i].discount <= 100) {
       return (
         Number(
           this.dataRow[i].price *
@@ -340,8 +340,9 @@ export class InvoicedetailsComponent implements OnInit , OnDestroy {
           this.openSnackBar('Check Product Price', '')
           return
         }
-      }else if (discount < 0 || isNaN(discount) || discount == null) {
+      }else if ( discount < 0 || isNaN(discount) || discount == null) {
         if (this.lang == 'ar') {
+          console.log(discount)
           this.openSnackBar('خطا بنسبة الخصم', '');
           return;
         } else {
@@ -456,7 +457,7 @@ export class InvoicedetailsComponent implements OnInit , OnDestroy {
   val(event: any) {
     let val = event.target.value;
     if (val < 0) {
-      event.target.value = '';
+      event.target.value = '' ;
     }
   }
 

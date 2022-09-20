@@ -201,7 +201,7 @@
                 name="Price"
                 [(ngModel)]="invoiceArray[i].discount"
                 placeholder="{{ 'Discount' | translate }}"
-                (keyup)="maxVal($event)"
+                (keyup)="maxVal(i)"
                 class="form-control text-center"
                 max="100"
               />

@@ -139,27 +139,26 @@ export class AddinvoiceComponent implements OnInit, OnDestroy {
     //////////////////////////////////////////////////
   }
 
-  maxVal(event: any) {
-    let value = Number(event.target.value);
-
-    if (value > 100) {
+  maxVal(i: any) {
+console.log(this.invoiceArray[i].discount)
+    if (this.invoiceArray[i].discount> 100) {
       if (this.lang == 'ar') {
         this.openSnackBar('100 اقصي رقم', '');
-        event.target.value = '';
+        this.invoiceArray[i].discount = '';
         return;
       } else {
         this.openSnackBar('Max Number 100', '');
-        event.target.value = '';
+        this.invoiceArray[i].discount = '';
         return;
       }
-    } else if (value < 0) {
+    } else if (this.invoiceArray[i].discount < 0) {
       if (this.lang == 'ar') {
         this.openSnackBar('خطا بالرقم', '');
-        event.target.value = '';
+        this.invoiceArray[i].discount = '';
         return;
       } else {
         this.openSnackBar('Number Wrong', '');
-        event.target.value = '';
+        this.invoiceArray[i].discount = '';
         return;
       }
     }
@@ -217,8 +216,8 @@ export class AddinvoiceComponent implements OnInit, OnDestroy {
       discountVal: '',
       totalPriceItem: '',
     };
-    //  this.invoiceArray.push(this.newDynamic);
-    console.log(this.invoiceArray);
+     this.invoiceArray.push(this.newDynamic);
+   // console.log(this.invoiceArray);
     return true;
   }
   ///////////////////////////////////////////////////////////////////

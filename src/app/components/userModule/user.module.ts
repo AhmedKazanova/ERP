@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EditeprofileComponent } from './editeprofile/editeprofile.component';
-import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TranslateModule , TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -15,8 +13,6 @@ import { MaterialModule } from 'src/app/shared/modules/material.module';
 
 @NgModule({
   declarations: [
-    EditeprofileComponent,
-    ChangepasswordComponent,
     SettingsComponent,
     DashboardComponent
   ],
