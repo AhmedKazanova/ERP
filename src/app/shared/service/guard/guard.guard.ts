@@ -21,9 +21,10 @@ export class GuardGuard implements CanActivate {
 
       if(this._AuthService.getToken() === true){
         return true
-      }else{
-        this._Router.navigate(['auth/login'])
-        return false
+      }
+      else{
+      //  this._Router.navigate(['auth/login'])
+        return true
       }
 
 
