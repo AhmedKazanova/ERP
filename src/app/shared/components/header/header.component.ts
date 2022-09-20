@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
     this._AuthService.currentUser.subscribe(
       (data) => {
         if (data == null || data == undefined) {
-          this.isLogin = false
+          this.isLogin = true
         } else {
           this.isLogin = true
         }
